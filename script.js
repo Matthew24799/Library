@@ -6,7 +6,7 @@ function book(title) {
 };
 
 function addBookToLibrary() {
-    const addBook = prompt("give title");
+    const addBook = "skyward";
     
     const newBook = new book(addBook) 
     myLibrary.push(newBook)
