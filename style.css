@@ -8,6 +8,17 @@ h1 {
     text-align: center;
 }
 
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
 .card {
+    display: grid;
     text-align: center;
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
 }
