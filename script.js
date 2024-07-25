@@ -2,26 +2,25 @@ const container = document.getElementById("container");
 const dialog = document.querySelector("dialog");
 const showButton =document.querySelector("dialog + button");
 const closeButton = document.querySelector("dialog button");
+const submit = document.querySelector("#submit")
 const myLibrary = [];
 
-function book(title, author, pages, read) {
+function book(title, author, pages) {
     this.title = title,
     this.author = author,
-    this.pages = pages,
-    this.read = read;
+    this.pages = pages;
 
 };
 
-function addBookToLibrary() {
-  
-
+function addBookToLibrary(title, author, pages) {
+  let newBook = new book(title, author, pages);
+   myLibrary.push(newBook);
+   displayCards(newBook);
+   console.log(newBook)
 };
 
 
-function makeCard() {
-    
-
-    for (i in myLibrary) {
+function makeCard(book) {
         const card = document.createElement("div");
         card.classList.add("card");
 
@@ -30,12 +29,11 @@ function makeCard() {
         const pages = document.createElement("p");
 
 
-        title.innerText = `Title: ${myLibrary[i].title}`;
-        author.innerText = `Author: ${myLibrary[i].author}`;
-        pages.innerText = `Pages: ${myLibrary[i].pages}`;
+        title.innerText = `Title: ${book.title}`;
+        author.innerText = `Author: ${book.author}`;
+        pages.innerText = `Pages: ${book.pages}`;
 
-        console.log(myLibrary[i])
-        console.log(myLibrary[i].title);
+      
         
      
 
@@ -44,6 +42,13 @@ function makeCard() {
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
+    
+}
+
+function displayCards(book) {
+    container.replaceChildren();
+    for (i in myLibrary) {
+        makeCard(book)
     }
 }
 
@@ -55,8 +60,14 @@ closeButton.addEventListener("click", () => {
     dialog.close();
 })
 
-const book1 = new book("Game Of Thrones","ahron", "100", "yes");
-const book2 = new book("Skyward","Ralpth", "200", "no");
-myLibrary.push(book1, book2);
+submit.addEventListener("click", (event) => {
+    event.preventDefault();
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
 
-makeCard();
+    addBookToLibrary(title,author,pages);
+
+} )
+
+

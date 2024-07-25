@@ -12,18 +12,16 @@
     <dialog>
         <button>Close</button>
         <form>
-           <label>Book Title: 
-            <input type="text" id="title" required/>
-           </label> 
-           <label>Author: 
-            <input type="text" id="author" required/>
-           </label> 
-           <label>Pages 
-            <input type="Number" id="pages" required/>
-           </label> 
-           <label>Read
-            <input type="checkbox"  id="read">
-           </label>
+           <label for="title">Book Title:  </label> 
+            <input type="text" name="title" id="title" required/>
+           
+           <label for="author">Author: </label>
+            <input type="text" name="author" id="author" required/>
+        
+           <label for="pages">Pages </label>
+            <input type="Number" name="pages" id="pages" required/>
+            
+           <input type="submit" value="Add" id="submit"/> 
         </form>
     </dialog>
 
