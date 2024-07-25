@@ -1,5 +1,7 @@
-const container = document.getElementById("container")
-
+const container = document.getElementById("container");
+const dialog = document.querySelector("dialog");
+const showButton =document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
 const myLibrary = [];
 
 function book(title, author, pages, read) {
@@ -44,6 +46,14 @@ function makeCard() {
         card.appendChild(pages);
     }
 }
+
+showButton.addEventListener("click", () => {
+    dialog.showModal();
+})
+
+closeButton.addEventListener("click", () => {
+    dialog.close();
+})
 
 const book1 = new book("Game Of Thrones","ahron", "100", "yes");
 const book2 = new book("Skyward","Ralpth", "200", "no");
