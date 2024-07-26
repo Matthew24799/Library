@@ -29,14 +29,19 @@ function makeCard(book) {
         const pages = document.createElement("p");
         const removeButton = document.createElement("a");
         const read = document.createElement("div");
-        read.classList.add("read")
+        read.classList.add("read");
 
         title.innerText = `Title: ${book.title}`;
         author.innerText = `Author: ${book.author}`;
         pages.innerText = `Pages: ${book.pages}`;
         removeButton.innerText = "Remove";
        
-        
+        if (book.read == true) {
+            read.innerText = "Finished";
+        } else {
+            read.innerText = "Not Finished";
+        }
+
         
       removeButton.addEventListener("click", () => {
         card.remove();

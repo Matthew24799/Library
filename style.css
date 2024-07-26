@@ -24,9 +24,17 @@ h1 {
 }
 
 .read {
+    position: relative;
+    font-family: Arial;
+    top: 64px;
+    left: 10px;
     background-color: black;
+    color: white;
     width: 90px;
-    height: 40px;
+    height: 30px;
+    padding-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .card a {
