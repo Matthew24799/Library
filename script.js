@@ -27,39 +27,33 @@ function makeCard(book) {
         const title = document.createElement("p");
         const author = document.createElement("p");
         const pages = document.createElement("p");
-        const removeButton = document.createElement("button");
-        const checkbox = document.createElement("INPUT");
-        checkbox.setAttribute("type", "checkbox");
-
+        const removeButton = document.createElement("a");
+        const read = document.createElement("div");
+        read.classList.add("read")
 
         title.innerText = `Title: ${book.title}`;
         author.innerText = `Author: ${book.author}`;
         pages.innerText = `Pages: ${book.pages}`;
-        checkbox.checked = book.read;
-
+        removeButton.innerText = "Remove";
+       
+        
+        
       removeButton.addEventListener("click", () => {
         card.remove();
       })
-        
-      
-
         
         container.appendChild(card);
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
-        card.appendChild(checkbox);
+        card.appendChild(read);
         card.appendChild(removeButton);
 
         
-        console.log(checkbox.checked);
 }
 
 function displayCards(book) {
-
         makeCard(book)
-    
-    console.log(myLibrary);
 }
 
 showButton.addEventListener("click", () => {
@@ -77,7 +71,7 @@ submit.addEventListener("click", (event) => {
     const pages = document.getElementById("pages").value;
     const read = document.querySelector("#checkBox").checked;
 
-    console.log(read.checked);
+    
     addBookToLibrary(title,author,pages,read);
 
     dialog.close();

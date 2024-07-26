@@ -18,7 +18,33 @@ h1 {
 .card {
     display: grid;
     text-align: center;
-    background-color: yellow;
-    width: 200px;
-    height: 200px;
+    background-color: rgb(207, 207, 206);
+    width: 250px;
+    height: 300px;
 }
+
+.read {
+    background-color: black;
+    width: 90px;
+    height: 40px;
+}
+
+.card a {
+   
+    position: relative;
+    top: 10px;
+    left: 150px;
+    font-size: 20px;
+    font-family:Arial;
+    width: 90px;
+    height: 30px;
+    padding-top: 10px;
+    border-width:1px;
+    color:#000000;
+    border-color:#000000;
+    font-weight:bold;
+    background:#f01e1e;
+    cursor: pointer;
+  }
+  
+             
