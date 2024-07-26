@@ -30,6 +30,7 @@ function makeCard(book) {
         const removeButton = document.createElement("a");
         const read = document.createElement("div");
         read.classList.add("read");
+        let toggle = "";
 
         title.innerText = `Title: ${book.title}`;
         author.innerText = `Author: ${book.author}`;
@@ -38,13 +39,28 @@ function makeCard(book) {
        
         if (book.read == true) {
             read.innerText = "Finished";
+            toggle = "true";
         } else {
-            read.innerText = "Not Finished";
+            read.innerText = "Not finished";
+            toggle = "false";
         }
 
         
       removeButton.addEventListener("click", () => {
         card.remove();
+      })
+
+      read.addEventListener("click", () => {
+        console.log(toggle)
+        if ( toggle == "true") {
+            read.innerText = "Not finished";
+            toggle = "false"
+        } else if (toggle == "false") {
+            read.innerText = "Finished";
+            toggle = "true";
+            
+        }; 
+        
       })
         
         container.appendChild(card);
