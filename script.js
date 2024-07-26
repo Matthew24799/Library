@@ -30,15 +30,18 @@ function makeCard(book) {
         const removeButton = document.createElement("button");
         const checkbox = document.createElement("INPUT");
         checkbox.setAttribute("type", "checkbox");
+
+
         title.innerText = `Title: ${book.title}`;
         author.innerText = `Author: ${book.author}`;
         pages.innerText = `Pages: ${book.pages}`;
+        checkbox.checked = book.read;
 
       removeButton.addEventListener("click", () => {
         card.remove();
       })
         
-     
+      
 
         
         container.appendChild(card);
@@ -49,18 +52,14 @@ function makeCard(book) {
         card.appendChild(removeButton);
 
         
-        if(book.read == true) {
-            checkbox.setAttribute("checked", "true")
-            
-        }
         console.log(checkbox.checked);
 }
 
 function displayCards(book) {
-    container.replaceChildren();
-    for (i in myLibrary) {
+
         makeCard(book)
-    }
+    
+    console.log(myLibrary);
 }
 
 showButton.addEventListener("click", () => {
