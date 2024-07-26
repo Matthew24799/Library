@@ -27,7 +27,7 @@ function makeCard(book) {
         const title = document.createElement("p");
         const author = document.createElement("p");
         const pages = document.createElement("p");
-
+        const removeButton = document.createElement("button");
 
         title.innerText = `Title: ${book.title}`;
         author.innerText = `Author: ${book.author}`;
@@ -42,7 +42,7 @@ function makeCard(book) {
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
-    
+        card.appendChild(removeButton);
 }
 
 function displayCards(book) {
