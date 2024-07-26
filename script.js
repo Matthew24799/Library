@@ -9,6 +9,10 @@ const carrie = new book("Carrie", "Stephen King", "199", false);
 myLibrary.push(carrie);
 displayCards(carrie);
 
+const skyward = new book("Skyward", "Brandon Sanderson", "528", true);
+myLibrary.push(skyward);
+displayCards(skyward);
+
 function book(title, author, pages, read) {
     this.title = title,
     this.author = author,
@@ -83,7 +87,7 @@ function makeCard(book) {
         
 }
 
-function displayCards(book) {
+function displayCards(book){
         makeCard(book)
 }
 
