@@ -70,6 +70,7 @@ submit.addEventListener("click", (event) => {
 
     addBookToLibrary(title,author,pages);
 
+    dialog.close();
 } )
 
 
