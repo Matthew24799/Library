@@ -5,6 +5,10 @@ const closeButton = document.querySelector("dialog button");
 const submit = document.querySelector("#submit");
 const myLibrary = [];
 
+const carrie = new book("Carrie", "Stephen King", "199", false);
+myLibrary.push(carrie);
+displayCards(carrie);
+
 function book(title, author, pages, read) {
     this.title = title,
     this.author = author,
@@ -103,5 +107,7 @@ submit.addEventListener("click", (event) => {
 
     dialog.close();
 } )
+
+
 
 

@@ -34,12 +34,7 @@ form {
     padding: 10px;
 }
 
-form #checkbox {
-    
-    width: 25px;
-    height: 25px;
 
-}
 
 #container {
     display: flex;
@@ -63,7 +58,7 @@ form #checkbox {
 }
 
 .card p {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: bold;
 }
 
