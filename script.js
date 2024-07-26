@@ -33,7 +33,9 @@ function makeCard(book) {
         author.innerText = `Author: ${book.author}`;
         pages.innerText = `Pages: ${book.pages}`;
 
-      
+      removeButton.addEventListener("click", () => {
+        card.remove();
+      })
         
      
 
