@@ -1,6 +1,6 @@
 const container = document.getElementById("container");
 const dialog = document.querySelector("dialog");
-const showButton =document.querySelector("dialog + button");
+const showButton = document.querySelector(".add");
 const closeButton = document.querySelector("dialog button");
 const submit = document.querySelector("#submit");
 const myLibrary = [];
@@ -30,6 +30,8 @@ function makeCard(book) {
         const removeButton = document.createElement("a");
         const read = document.createElement("div");
         read.classList.add("read");
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("btnContainer");
         let toggle = "";
 
         title.innerText = `Title: ${book.title}`;
@@ -39,9 +41,11 @@ function makeCard(book) {
        
         if (book.read == true) {
             read.innerText = "Finished";
+            read.style.backgroundColor = "green";
             toggle = "true";
         } else {
             read.innerText = "Not finished";
+            read.style.backgroundColor = "red";
             toggle = "false";
         }
 
@@ -51,12 +55,13 @@ function makeCard(book) {
       })
 
       read.addEventListener("click", () => {
-        console.log(toggle)
         if ( toggle == "true") {
             read.innerText = "Not finished";
+            read.style.backgroundColor = "red";
             toggle = "false"
         } else if (toggle == "false") {
             read.innerText = "Finished";
+            read.style.backgroundColor = "green";
             toggle = "true";
             
         }; 
@@ -67,8 +72,9 @@ function makeCard(book) {
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
-        card.appendChild(read);
-        card.appendChild(removeButton);
+        card.appendChild(buttonContainer);
+        buttonContainer.appendChild(read);
+        buttonContainer.appendChild(removeButton);
 
         
 }

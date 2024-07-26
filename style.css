@@ -1,12 +1,31 @@
 body {
     margin: 0px;
     padding: 0px;
+    background-color: bisque;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 199, 130);
+    padding-bottom: 20px;
+}
 
 h1 {
-    text-align: center;
+    padding: 50px;
 }
+
+.add {
+    width: 75px;
+    height: 75px;
+    background-color: lightgreen;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: arial;
+}   
+
 
 #container {
     display: flex;
@@ -17,17 +36,25 @@ h1 {
 
 .card {
     display: grid;
+    grid-template-rows: 2fr 2fr 2fr 1fr;
     text-align: center;
     background-color: rgb(207, 207, 206);
     width: 250px;
     height: 300px;
 }
 
+.card p {
+    font-size: 1.5rem;
+}
+
+
+.btnContainer{
+    display: flex;
+    justify-content: space-between;
+}
 .read {
-    position: relative;
+
     font-family: Arial;
-    top: 64px;
-    left: 10px;
     background-color: black;
     color: white;
     width: 90px;
@@ -40,9 +67,8 @@ h1 {
 
 .card a {
    
-    position: relative;
-    top: 10px;
-    left: 150px;
+    
+    
     font-size: 20px;
     font-family:Arial;
     width: 90px;
@@ -56,4 +82,4 @@ h1 {
     cursor: pointer;
   }
   
-             
+       
