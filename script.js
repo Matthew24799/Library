@@ -3,6 +3,25 @@ const dialog = document.querySelector("dialog");
 const showButton = document.querySelector(".add");
 const closeButton = document.querySelector("dialog button");
 const submit = document.querySelector("#submit");
+
+ 
+
+class book {
+ constructor(title, author, pages, read) {
+    this.title = title,
+    this.author = author,
+    this.pages = pages;
+    this.read = read;
+};
+}
+
+function addBookToLibrary(title, author, pages, read) {
+  let newBook = new book(title, author, pages, read);
+   myLibrary.push(newBook);
+   displayCards(newBook);
+   console.log(newBook)
+};
+
 const myLibrary = [];
 
 const carrie = new book("Carrie", "Stephen King", "199", false);
@@ -12,21 +31,7 @@ displayCards(carrie);
 const skyward = new book("Skyward", "Brandon Sanderson", "528", true);
 myLibrary.push(skyward);
 displayCards(skyward);
-
-function book(title, author, pages, read) {
-    this.title = title,
-    this.author = author,
-    this.pages = pages;
-    this.read = read;
-};
-
-function addBookToLibrary(title, author, pages, read) {
-  let newBook = new book(title, author, pages, read);
-   myLibrary.push(newBook);
-   displayCards(newBook);
-   console.log(newBook)
-};
-
+ 
 
 function makeCard(book) {
         const card = document.createElement("div");
